@@ -1,0 +1,15 @@
+.idea
+node
+target
+*.log
+
+src/main/resources/ui/node_modules
+src/main/resources/ui/test-reports/karma
+src/main/resources/ui/src/jspm_packages
+src/main/resources/ui/src/assets/css
+src/main/resources/ui/src/app/config/config.js
+
+src/main/resources/static/ui/app.bundle*
+src/main/resources/static/ui/index.html
+
+src/main/resources/application-LOCAL.properties
