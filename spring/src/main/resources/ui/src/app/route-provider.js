@@ -5,8 +5,7 @@ const RouteProvider = function ($routeProvider) {
     $routeProvider
         .when('/helloWorld', {
             template: helloWorldTemplate,
-            controller: 'HelloWorldCtrl',
-            controllerAs: 'helloWorld'
+            controller: 'HelloWorldCtrl'
         })
         .when('/menu', {
             template: menuTemplate,

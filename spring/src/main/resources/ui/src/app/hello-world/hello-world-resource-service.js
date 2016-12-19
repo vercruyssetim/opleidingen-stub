@@ -8,7 +8,7 @@ class HelloWorldResource{
     }
 
     helloWorld(){
-        return this.$http.get(this.ENV.endpoint + '/algorithmia/helloWorld', this.HTTP_CONFIG);
+        return this.$http.get(this.ENV.endpoint + '/hello/helloWorld', this.HTTP_CONFIG);
     }
 }
 

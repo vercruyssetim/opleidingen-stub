@@ -2,14 +2,22 @@
 node
 target
 *.log
+*.iml
+*.lock
 
-src/main/resources/ui/node_modules
-src/main/resources/ui/test-reports/karma
-src/main/resources/ui/src/jspm_packages
-src/main/resources/ui/src/assets/css
-src/main/resources/ui/src/app/config/config.js
+/spring/src/main/resources/ui/node_modules/
+/spring/src/main/resources/ui/test-reports/karma
+/spring/src/main/resources/ui/src/jspm_packages
+/spring/src/main/resources/ui/src/assets/css
+/spring/src/main/resources/ui/src/app/config/config.js
+/spring/src/main/resources/static/
+/spring/src/main/resources/ui/test-reports/
 
-src/main/resources/static/ui/app.bundle*
-src/main/resources/static/ui/index.html
+/spring/src/main/resources/static/ui/app.bundle*
+/spring/src/main/resources/static/ui/index.html
 
-src/main/resources/application-LOCAL.properties
+/spring/src/main/resources/application-LOCAL.properties
+logs/
+
+
+

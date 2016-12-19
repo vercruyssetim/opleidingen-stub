@@ -3,12 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>vlaanderen.vick.ai</groupId>
-    <artifactId>ai-server</artifactId>
+    <groupId>be.cegeka</groupId>
+    <artifactId>spring</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
-    <name>AI-server</name>
+    <name>skeleton-server</name>
     <description>Server side of the ai experiments</description>
 
     <parent>
@@ -66,7 +66,7 @@
                 <plugin>
                     <groupId>com.github.eirslett</groupId>
                     <artifactId>frontend-maven-plugin</artifactId>
-                    <version>1.0</version>
+                    <version>1.2</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -113,18 +113,18 @@
                             <execution>
                                 <id>install node and npm</id>
                                 <goals>
-                                    <goal>install-node-and-npm</goal>
+                                    <goal>install-node-and-yarn</goal>
                                 </goals>
                                 <phase>generate-resources</phase>
                                 <configuration>
-                                    <nodeVersion>v5.5.0</nodeVersion>
-                                    <npmVersion>3.3.12</npmVersion>
+                                    <nodeVersion>v7.1.0</nodeVersion>
+                                    <yarnVersion>v0.16.1</yarnVersion>
                                 </configuration>
                             </execution>
                             <execution>
-                                <id>npm install</id>
+                                <id>yarn install</id>
                                 <goals>
-                                    <goal>npm</goal>
+                                    <goal>yarn</goal>
                                 </goals>
                                 <phase>generate-resources</phase>
                                 <configuration>

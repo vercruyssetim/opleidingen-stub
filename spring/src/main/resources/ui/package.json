@@ -1,17 +1,21 @@
 {
-  "name": "AI-UI",
+  "name": "SKELETON-UI",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "update": "npm install && jspm install",
-    "setup": "npm install -g jspm && jspm config registries.github.auth dmRhYi1sbmQ6WVR5QXhQbTQzV2NIdA== && npm run update",
+    "update": "yarn install && jspm install",
     "clean": "gulp clean",
+    "setup": "yarn add global jspm && jspm config registries.github.auth dmRhYi1sbmQ6WVR5QXhQbTQzV2NIdA== && yarn run update",
     "prepare": "gulp prepare",
     "test": "gulp test",
     "dev": "gulp dev",
-    "build": "gulp build"
+    "build": "gulp build",
+    "postinstall": "node node_modules/phantomjs-prebuilt/install.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "global": "^4.3.1",
+    "jspm": "^0.16.48"
+  },
   "devDependencies": {
     "babel-eslint": "7.0.0",
     "babel-polyfill": "6.13.0",

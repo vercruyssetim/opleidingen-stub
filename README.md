@@ -1,5 +1,8 @@
-#vdab-ai
-
-Trying out different artificial intelligence algoritms in apps
-
-First on the list: Algorithmia!
+#Skeleton project
+ 
+ Basic project setup
+ 
+ ##Technologies
+ - Spring-boot
+ - angular
+ 
