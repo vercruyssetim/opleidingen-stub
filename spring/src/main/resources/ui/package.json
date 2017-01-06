@@ -5,7 +5,7 @@
   "scripts": {
     "update": "yarn install && jspm install",
     "clean": "gulp clean",
-    "setup": "yarn add global jspm && jspm config registries.github.auth dmRhYi1sbmQ6WVR5QXhQbTQzV2NIdA== && yarn run update",
+    "setup": "yarn add global jspm && yarn run update",
     "prepare": "gulp prepare",
     "test": "gulp test",
     "dev": "gulp dev",
