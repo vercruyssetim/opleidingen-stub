@@ -1,0 +1,4 @@
+src/app/config/config.js
+src/jspm.conf.js
+src/jspm_packages/*
+gulp-tasks/*

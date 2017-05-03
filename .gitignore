@@ -5,18 +5,18 @@ target
 *.iml
 *.lock
 
-/spring/src/main/resources/ui/node_modules/
-/spring/src/main/resources/ui/test-reports/karma
-/spring/src/main/resources/ui/src/jspm_packages
-/spring/src/main/resources/ui/src/assets/css
-/spring/src/main/resources/ui/src/app/config/config.js
-/spring/src/main/resources/static/
-/spring/src/main/resources/ui/test-reports/
+/opleidingen-server/src/main/resources/ui/node_modules/
+/opleidingen-server/src/main/resources/ui/test-reports/karma
+/opleidingen-server/src/main/resources/ui/src/jspm_packages
+/opleidingen-server/src/main/resources/ui/src/assets/css
+/opleidingen-server/src/main/resources/ui/src/app/config/config.js
+/opleidingen-server/src/main/resources/static/
+/opleidingen-server/src/main/resources/ui/test-reports/
 
-/spring/src/main/resources/static/ui/app.bundle*
-/spring/src/main/resources/static/ui/index.html
+/opleidingen-server/src/main/resources/static/ui/app.bundle*
+/opleidingen-server/src/main/resources/static/ui/index.html
 
-/spring/src/main/resources/application-LOCAL.properties
+/opleidingen-server/src/main/resources/application-LOCAL.properties
 logs/
 
 

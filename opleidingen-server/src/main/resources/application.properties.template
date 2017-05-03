@@ -1,0 +1,7 @@
+#------------------------------
+# Template for properties. Copy this file to your jar directory or to a /config directory
+#------------------------------
+
+logging.level.org.hibernate.SQL=
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder=
+spring.jpa.show-sql=
