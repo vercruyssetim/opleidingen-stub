@@ -19,6 +19,11 @@ try {
             archiveAllTestResults()
         }
     }
+    stage("deploy") {
+        node("linux && docker") {
+            maven("clean install -DskipFrontendPlugin -DskipTests")
+        }
+    }
     stage("deploy to Test") {
         milestone 1
         askForDeploy('Deploy to Test?')
@@ -55,7 +60,7 @@ def cloneProject() {
 }
 
 def buildMavenImage() {
-    sh "docker build -t opleidingen/mave spring/ "
+    sh "docker build -t opleidingen/maven spring/ "
 }
 
 def runCiTests() {
