@@ -46,7 +46,7 @@ def cleanWorkspace() {
         sh "mv opleidinge-server/src/main/resources/ui/yarn.lock ~/.tmp/${env.BUILD_TAG}/yarn.lock"
     } catch (err) {
     }
-    sh "rm -rf opleidinge-server/*"
+    sh "rm -rf *"
     try {
         sh "mkdir -p opleidinge-server/src/main/resources/ui/src"
         sh "mv ~/.tmp/${env.BUILD_TAG}/node_modules/ opleidinge-server/src/main/resources/ui/node_modules"
