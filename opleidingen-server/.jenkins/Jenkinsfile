@@ -78,7 +78,7 @@ def askForDeploy(message) {
 }
 
 def copyJar(username, host) {
-    sh "scp opleiding-server/target/opleidingen-server-${VERSION_NUMBER}.jar ${username}@${host}:opleidingen/server/opleidingen-server.jar"
+    sh "scp opleidingen-server/target/opleidingen-server-${VERSION_NUMBER}.jar ${username}@${host}:opleidingen/server/opleidingen-server.jar"
 }
 
 def startServer(username, host) {
