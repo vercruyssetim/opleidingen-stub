@@ -68,7 +68,7 @@ def buildMavenImage() {
 }
 
 def archiveAllTestResults() {
-    step([$class: "JUnitResultArchiver", testResults: "mentor-server/target/surefire-reports/TEST-*.xml"])
+    step([$class: "JUnitResultArchiver", testResults: "opleidingen-server/target/surefire-reports/TEST-*.xml"])
 }
 
 def askForDeploy(message) {
