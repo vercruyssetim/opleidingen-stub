@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<configuration>
-    <include resource="org/springframework/boot/logging/logback/base.xml"/>
-
-    <logger name="org.springframework" level="WARN"/>
-    <logger name="org.hibernate.engine" level="WARN"/>
-    <logger name="org.glassfish.jersey" level="WARN"/>
-    <logger name="be.vdab" level="DEBUG"/>
-</configuration>
