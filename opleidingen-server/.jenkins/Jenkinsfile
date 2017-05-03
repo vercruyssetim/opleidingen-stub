@@ -82,12 +82,12 @@ def copyJar(username, host) {
 }
 
 def startServer(username, host) {
-    sh "ssh ${username}@${host} opleidingen/server/startMentorServer.sh"
+    sh "ssh ${username}@${host} opleidingen/server/startOpleidigenServer.sh"
 }
 
 def stopServer(username, host) {
     try {
-        sh "ssh ${username}@${host} opleidingen/server/stopMentorServer.sh"
+        sh "ssh ${username}@${host} opleidingen/server/stopOpleidigenServer.sh"
     } catch (err) {
         printError(err)
     }
