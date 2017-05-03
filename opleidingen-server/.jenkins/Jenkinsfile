@@ -44,6 +44,7 @@ def cleanWorkspace() {
     sh "mkdir ~/.tmp/${env.BUILD_TAG}"
     try {
         sh "mv opleidingen-server/src/main/resources/ui/node_modules ~/.tmp/${env.BUILD_TAG}/node_modules"
+        sh "mv opleidingen-server/src/main/resources/ui/src/jspm_packages ~/.tmp/${env.BUILD_TAG}/jspm_packages"
         sh "mv opleidingen-server/src/main/resources/ui/yarn.lock ~/.tmp/${env.BUILD_TAG}/yarn.lock"
     } catch (err) {
     }
@@ -51,6 +52,7 @@ def cleanWorkspace() {
     try {
         sh "mkdir -p opleidingen-server/src/main/resources/ui/src"
         sh "mv ~/.tmp/${env.BUILD_TAG}/node_modules/ opleidingen-server/src/main/resources/ui/node_modules"
+        sh "mv ~/.tmp/${env.BUILD_TAG}/jspm_packages/ opleidingen-server/src/main/resources/ui/src/jspm_packages"
         sh "mv ~/.tmp/${env.BUILD_TAG}/yarn.lock opleidingen-server/src/main/resources/ui/yarn.lock"
     } catch (err) {
     }
