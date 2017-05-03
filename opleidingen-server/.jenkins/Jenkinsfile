@@ -42,15 +42,15 @@ try {
 def cleanWorkspace() {
     sh "mkdir ~/.tmp/${env.BUILD_TAG}"
     try {
-        sh "mv spring/src/main/resources/ui/node_modules ~/.tmp/${env.BUILD_TAG}/node_modules"
-        sh "mv spring/src/main/resources/ui/yarn.lock ~/.tmp/${env.BUILD_TAG}/yarn.lock"
+        sh "mv opleidinge-server/src/main/resources/ui/node_modules ~/.tmp/${env.BUILD_TAG}/node_modules"
+        sh "mv opleidinge-server/src/main/resources/ui/yarn.lock ~/.tmp/${env.BUILD_TAG}/yarn.lock"
     } catch (err) {
     }
-    sh "rm -rf spring/*"
+    sh "rm -rf opleidinge-server/*"
     try {
-        sh "mkdir -p spring/src/main/resources/ui/src"
-        sh "mv ~/.tmp/${env.BUILD_TAG}/node_modules/ spring/src/main/resources/ui/node_modules"
-        sh "mv ~/.tmp/${env.BUILD_TAG}/yarn.lock spring/src/main/resources/ui/yarn.lock"
+        sh "mkdir -p opleidinge-server/src/main/resources/ui/src"
+        sh "mv ~/.tmp/${env.BUILD_TAG}/node_modules/ opleidinge-server/src/main/resources/ui/node_modules"
+        sh "mv ~/.tmp/${env.BUILD_TAG}/yarn.lock opleidinge-server/src/main/resources/ui/yarn.lock"
     } catch (err) {
     }
     sh "rm -rf ~/.tmp/${env.BUILD_TAG}"
@@ -61,7 +61,7 @@ def cloneProject() {
 }
 
 def buildMavenImage() {
-    sh "docker build -t opleidingen/maven spring/ "
+    sh "docker build -t opleidingen/maven opleidingen-server/ "
 }
 
 def archiveAllTestResults() {
@@ -75,7 +75,7 @@ def askForDeploy(message) {
 }
 
 def copyJar(username, host) {
-    sh "scp spring/target/spring-${VERSION_NUMBER}.jar ${username}@${host}:opleidingen/server/spring.jar"
+    sh "scp opleiding-server/target/opleidingen-server-${VERSION_NUMBER}.jar ${username}@${host}:opleidingen/server/opleidingen-server.jar"
 }
 
 def startServer(username, host) {
@@ -107,7 +107,7 @@ def maven(task) {
 def startMavenContainer(mavenName) {
     def currentDir = pwd()
     killContainer(mavenName)
-    sh "docker run -t -d --name ${mavenName} -v $currentDir/spring:/usr/src/opleidingen -v /usr/maven/.m2/repository:/usr/maven/.m2/repository opleidingen/maven bash"
+    sh "docker run -t -d --name ${mavenName} -v $currentDir/opleidingen-server:/usr/src/opleidingen -v /usr/maven/.m2/repository:/usr/maven/.m2/repository opleidingen/maven bash"
 }
 def execMaven(mavenName, task) {
     sh "docker exec ${mavenName} mvn  ${task}"
