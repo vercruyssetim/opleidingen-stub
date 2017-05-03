@@ -13,8 +13,7 @@
     "postinstall": "node node_modules/phantomjs-prebuilt/install.js"
   },
   "dependencies": {
-    "global": "^4.3.1",
-    "jspm": "^0.16.48"
+    "global": "^4.3.1"
   },
   "devDependencies": {
     "babel-eslint": "7.0.0",
