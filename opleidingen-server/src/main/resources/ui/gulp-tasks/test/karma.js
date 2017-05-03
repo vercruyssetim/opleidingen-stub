@@ -1,4 +1,4 @@
-import gulp from "gulp";
+import gulp from 'gulp';
 import karma from "karma";
 import {files} from "../config";
 
