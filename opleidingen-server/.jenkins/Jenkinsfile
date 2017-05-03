@@ -2,6 +2,7 @@ VERSION_NUMBER = "0.0.0"
 
 JENKINS_GRADLE_NAME = "opleidingen_maven"
 
+JSPM_GITHUB_AUTH_TOKEN = env.JSPM_GITHUB_AUTH_TOKEN
 TEST_SERVER_USERNAME = env.TEST_SERVER_USERNAME
 TEST_SERVER_URL = env.TEST_SERVER_URL
 
@@ -61,7 +62,7 @@ def cloneProject() {
 }
 
 def buildMavenImage() {
-    sh "docker build -t opleidingen/maven opleidingen-server/ "
+    sh "docker build --build-arg JSPM_GITHUB_AUTH_TOKEN=${JSPM_GITHUB_AUTH_TOKEN} -t opleidingen/maven opleidingen-server/ "
 }
 
 def archiveAllTestResults() {

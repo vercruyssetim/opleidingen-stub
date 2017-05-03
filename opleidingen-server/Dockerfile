@@ -10,5 +10,6 @@ RUN adduser --system --gid 900 --uid 989 --shell /bin/bash jenkins
 RUN echo Europe/Brussels > /etc/timezone && dpkg-reconfigure --frontend noninteractive tzdata
 RUN mkdir -p /usr/src/opleidingen
 
+ENV JSPM_GITHUB_AUTH_TOKEN ${JSPM_GITHUB_AUTH_TOKEN}
 USER jenkins
 WORKDIR /usr/src/opleidingen
