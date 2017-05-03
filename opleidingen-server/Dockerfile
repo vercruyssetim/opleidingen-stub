@@ -12,6 +12,5 @@ RUN mkdir -p /usr/src/opleidingen
 
 ARG JSPM_GITHUB_AUTH_TOKEN
 ENV JSPM_GITHUB_AUTH_TOKEN $JSPM_GITHUB_AUTH_TOKEN
-RUN echo $JSPM_GITHUB_AUTH_TOKEN
 USER jenkins
 WORKDIR /usr/src/opleidingen
