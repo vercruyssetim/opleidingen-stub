@@ -52,10 +52,19 @@
             <artifactId>spring-boot-starter-jersey</artifactId>
         </dependency>
 
+        <!-- jersey -->
         <dependency>
             <groupId>org.glassfish.jersey.ext</groupId>
             <artifactId>jersey-proxy-client</artifactId>
         </dependency>
+
+        <!-- apache commons -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.4</version>
+        </dependency>
+
 
         <!-- Test dependencies -->
         <dependency>
