@@ -8,6 +8,7 @@ public class OpleidingElasticsearch implements ElasticSearchDocument{
     public String code;
     public String naam;
     public String getuigSchrift;
+    public String doelstelling;
 
     @Override
     public String getId() {

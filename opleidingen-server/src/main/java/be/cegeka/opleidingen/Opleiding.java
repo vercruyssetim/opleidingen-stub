@@ -13,6 +13,7 @@ public class Opleiding implements ElasticSearchDocument {
     private String getuigschrift;
     private String doelgroep;
     private boolean erkend;
+    private String doelstelling;
 
     public String getName() {
         return name;
@@ -34,6 +35,10 @@ public class Opleiding implements ElasticSearchDocument {
         return erkend;
     }
 
+    public String getDoelstelling() {
+        return doelstelling;
+    }
+
     public String toString() {
         return ToStringBuilder.reflectionToString(this);
     }
@@ -52,6 +57,7 @@ public class Opleiding implements ElasticSearchDocument {
         private String getuigschrift = "getuigschrift";
         private String doelgroep = "doelgroep";
         private boolean erkend = false;
+        private String doelstelling = "doelstelling";
 
         public static OpleidingBuilder anOpleiding() {
             return new OpleidingBuilder();
@@ -64,6 +70,7 @@ public class Opleiding implements ElasticSearchDocument {
             opleiding.getuigschrift = this.getuigschrift;
             opleiding.doelgroep = this.doelgroep;
             opleiding.erkend = this.erkend;
+            opleiding.doelstelling = this.doelstelling;
             return opleiding;
         }
 
@@ -89,6 +96,11 @@ public class Opleiding implements ElasticSearchDocument {
 
         public OpleidingBuilder withErkend(boolean erkend) {
             this.erkend = erkend;
+            return this;
+        }
+
+        public OpleidingBuilder withDoelstelling(String doelstelling) {
+            this.doelstelling = doelstelling;
             return this;
         }
     }

@@ -28,6 +28,7 @@ public class OpleidingenService {
                 .withId(opleidingElasticsearch.getId())
                 .withName(opleidingElasticsearch.naam)
                 .withGetuigschrift(opleidingElasticsearch.getuigSchrift)
+                .withDoelstelling(opleidingElasticsearch.doelstelling)
                 .withDoelgroep(hasAtLeastOnceDoelgroepZelfstandige(cursussen) ? "Zelfstandige" : "Other")
                 .withErkend(cursussen.stream().anyMatch(cursusElasticsearch -> cursusElasticsearch.erkend))
                 .build();
