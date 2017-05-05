@@ -4,7 +4,7 @@ services:
 
   elasticsearch:
     image: elasticsearch:2.3.5
-    container_name: mentor-server-elasticsearch
+    container_name: opleidingen-elasticsearch
     volumes:
       - ./elasticsearch/config/:/usr/share/elasticsearch/config
       - ./elasticsearch/data:/usr/share/elasticsearch/data
