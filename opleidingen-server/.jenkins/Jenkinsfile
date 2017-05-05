@@ -32,6 +32,7 @@ try {
         milestone 2
         node("linux && docker") {
             stopServer(TEST_SERVER_USERNAME, TEST_SERVER_URL)
+            deployServices(TEST_SERVER_USERNAME, TEST_SERVER_URL)
             copyJar(TEST_SERVER_USERNAME, TEST_SERVER_URL)
             startServer(TEST_SERVER_USERNAME, TEST_SERVER_URL)
         }
@@ -91,6 +92,29 @@ def stopServer(username, host) {
     } catch (err) {
         printError(err)
     }
+}
+
+def deployServices(username, host) {
+    haltCompose(username, host)
+    copyConfigFiles(username, host)
+    startCompose(username, host)
+}
+
+def haltCompose(username, host) {
+    try {
+        sh "ssh ${username}@${host} 'cd opleidingen && docker-compose down'"
+    } catch (err) {
+        printError(err)
+    }
+
+}
+
+def startCompose(username, host) {
+    sh "ssh ${username}@${host} 'cd opleidingen && docker-compose up -d'"
+}
+
+def copyConfigFiles(username, host) {
+    sh "scp opleidingen-server/.docker-compose/docker-compose.yml ${username}@${host}:opleidingen/docker-compose.yml"
 }
 
 def maven(task) {

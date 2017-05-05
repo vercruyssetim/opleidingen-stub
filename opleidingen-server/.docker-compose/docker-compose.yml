@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+
+  elasticsearch:
+    image: elasticsearch:2.3.5
+    container_name: mentor-server-elasticsearch
+    volumes:
+      - ./elasticsearch/config/:/usr/share/elasticsearch/config
+      - ./elasticsearch/data:/usr/share/elasticsearch/data
+    ports:
+     - 9200:9200
+     - 9300:9300

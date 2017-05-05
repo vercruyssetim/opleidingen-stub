@@ -1,11 +1,12 @@
 package be.cegeka.opleidingen;
 
 
+import be.cegeka.elasticsearch.ElasticSearchDocument;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class Opleiding {
+public class Opleiding implements ElasticSearchDocument {
 
     private String id;
     private String name;

@@ -1,16 +1,16 @@
 package be.cegeka.opleidingen;
 
-import org.springframework.context.annotation.Bean;
+import be.cegeka.cursussen.CursusSearchResult;
 
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.MediaType;
+import javax.ws.rs.*;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
+import static be.cegeka.opleidingen.Opleiding.OpleidingBuilder.anOpleiding;
+import static java.util.stream.Collectors.toList;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
 @Named
@@ -18,12 +18,32 @@ import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 public class OpleidingenResource {
 
     @Inject
-    private OpleidingRepository opleidingRepository;
+    private OpleidingenService opleidingenService;
 
     @GET
     @Path("searchOpleiding")
     @Produces(APPLICATION_JSON)
-    public List<Opleiding> searchOpleiding(@QueryParam("trefwoord") String trefwoord){
-        return opleidingRepository.findOpleidingen(trefwoord);
+    public Opleiding searchOpleiding(@QueryParam("id") String id){
+        return opleidingenService.findOpleiding(id);
+    }
+
+    @PUT
+    @Produces
+    @Consumes(APPLICATION_JSON)
+    @Path("opleiding")
+    public void uploadSearchResultOpleidingen(OpleidingSearchResult opleidingSearchResult){
+        opleidingenService.uploadSearchResultOpleidingen(opleidingSearchResult.hits.hits.stream()
+                .map(opleidingStruct -> opleidingStruct._source)
+                .collect(toList()));
+    }
+
+    @PUT
+    @Produces
+    @Consumes(APPLICATION_JSON)
+    @Path("cursus")
+    public void uploadSearchResultCursussen(CursusSearchResult cursusSearchResult){
+        opleidingenService.uploadSearchResultCursussen(cursusSearchResult.hits.hits.stream()
+                .map(cursusStruct -> cursusStruct._source)
+                .collect(toList()));
     }
 }

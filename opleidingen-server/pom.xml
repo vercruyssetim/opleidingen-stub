@@ -52,6 +52,13 @@
             <artifactId>spring-boot-starter-jersey</artifactId>
         </dependency>
 
+        <!-- elasticSearch -->
+        <dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+            <version>2.3.5</version>
+        </dependency>
+
         <!-- jersey -->
         <dependency>
             <groupId>org.glassfish.jersey.ext</groupId>
