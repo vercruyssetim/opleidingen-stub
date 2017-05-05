@@ -8,7 +8,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import javax.inject.Inject;
 import java.util.List;
 
-import static be.cegeka.opleidingen.Opleiding.OpleidingBuilder.anOpleiding;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
@@ -22,6 +21,11 @@ public class OpleidingenResourceTest {
     public void test() {
         List<Opleiding> opleidingen = opleidingenResource.searchOpleiding("lasser");
         assertThat(opleidingen).hasSize(1);
-        assertThat(opleidingen.get(0)).isEqualTo(anOpleiding().withName("lasser").build());
+        OpleidingAssert.assertThat(opleidingen.get(0))
+                .hasName("lasser")
+                .hasDoelgroep("doelgroep")
+                .isErkend(false)
+                .hasGetuigschrift("getuigschrift")
+                .hasId("E0001");
     }
 }
