@@ -46,4 +46,10 @@ public class OpleidingenResource {
                 .map(cursusStruct -> cursusStruct._source)
                 .collect(toList()));
     }
+
+    @DELETE
+    @Produces
+    public void dropIndex(){
+        opleidingenService.dropIndex();
+    }
 }

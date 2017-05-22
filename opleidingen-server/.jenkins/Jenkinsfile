@@ -37,6 +37,17 @@ try {
             startServer(TEST_SERVER_USERNAME, TEST_SERVER_URL)
         }
     }
+    stage("Migrate data") {
+        milestone 3
+        askForDeploy('Migrate data?')
+        milestone 4
+        node("linux && docker") {
+            sh "curl -X DELETE http://PL00402v:8080/rest/opleidingen"
+
+            sh "curl -X PUT -H \"Content-Type: application/json\" --data \"@opleidingen-server/src/main/resources/alle_opleidingen.json\" http://PL00402v:8080/rest/opleidingen/opleiding"
+            sh "curl -X PUT -H \"Content-Type: application/json\" --data \"@opleidingen-server/src/main/resources/alle_cursussen.json\" http://PL00402v:8080/rest/opleidingen/cursus"
+        }
+    }
 } catch (org.jenkinsci.plugins.workflow.steps.FlowInterruptedException exception) {
     return
 }

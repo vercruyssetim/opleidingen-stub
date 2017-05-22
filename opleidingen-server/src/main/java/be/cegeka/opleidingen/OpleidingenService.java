@@ -48,4 +48,8 @@ public class OpleidingenService {
     public void uploadSearchResultCursussen(List<CursusElasticsearch> cursussen) {
         cursussen.stream().forEach(cursus -> cursusRepository.add(cursus));
     }
+
+    public void dropIndex() {
+        opleidingRepository.dropIndex();
+    }
 }
