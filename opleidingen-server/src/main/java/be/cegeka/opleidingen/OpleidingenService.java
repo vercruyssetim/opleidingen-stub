@@ -27,7 +27,7 @@ public class OpleidingenService {
         return anOpleiding()
                 .withId(opleidingElasticsearch.getId())
                 .withName(opleidingElasticsearch.naam)
-                .withGetuigschrift(opleidingElasticsearch.getuigSchrift)
+                .withGetuigschrift(opleidingElasticsearch.getuigschrift)
                 .withDoelstelling(opleidingElasticsearch.doelstelling)
                 .withProgramma(opleidingElasticsearch.programma)
                 .withAttestering(opleidingElasticsearch.attestering)
